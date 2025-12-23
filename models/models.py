@@ -27,3 +27,24 @@ class Veiculo:
 
     def alterar_disponibilidade(self):
         self._disponivel = not self._disponivel
+
+class Vendedor:
+    vendedores = []
+
+    def __init__(self, nome):
+        self.nome = nome
+        self.comissao = 0
+        Vendedor.vendedores.append(self)
+
+    def __str__(self):
+        return f"{self.nome} | {self.comissao}"
+
+    def registrar_comissao(self, veiculo, porcentagem):
+        valor_comissao = veiculo.valor * (porcentagem / 100)
+        self.comissao += valor_comissao
+
+    @classmethod
+    def listar_vendedores(cls):
+        print(f"\n{"Vendedor".ljust(15)} | {"Comissão".ljust(15)}")
+        for vendedor in cls.vendedores:
+            print(f"{vendedor.nome.ljust(15)} | {vendedor.comissao}")
