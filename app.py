@@ -70,8 +70,6 @@ def lancar_venda():
         porcentagem
     )
 
-    print("Venda registrada com sucesso!")
-
     print("Venda e comissão registradas com sucesso!")
 
     voltar_ao_menu_principal()
