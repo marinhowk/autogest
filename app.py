@@ -91,6 +91,7 @@ def opcoes_menu_principal(Veiculo):
             case 1:
                 adicionar_veiculo(Veiculo)
             case 2:
+                Veiculo.listar_estoque()
                 lancar_venda()
             case 3:
                 subtitulo("Estoque - Disponíveis / Vendidos")
